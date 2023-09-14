@@ -2,6 +2,10 @@ package TestDatas;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 public class TestDataJsonPlaceholder {
     public static int başariliSorguStatusKodu=200;
     public static String contentType="application/json; charset=utf-8";
@@ -14,7 +18,7 @@ public class TestDataJsonPlaceholder {
         expectedData.put("body","quo et expedita modi cum officia vel magni\nndoloribus qui repudiandae\nnvero nisi sit\nnquos veniam quod sed accusamus veritatis error");
         return expectedData;
     }
-    public static JSONObject createResponseBody(int userId,int id,String title,String body){
+    public static JSONObject createResponseBody(double userId,double id,String title,String body){
         JSONObject expectedData =new JSONObject();
         expectedData.put("userId",userId);
         expectedData.put("id",id);
@@ -22,6 +26,17 @@ public class TestDataJsonPlaceholder {
         expectedData.put("body", body);
         return expectedData;
     }
+    public static Map<String,Object> createHashMapBody(double userId, double id, String title, String body){
+        Map<String,Object> bodyMap=new HashMap<>();
+        bodyMap.put("title",title);
+        bodyMap.put("body",body);
+        bodyMap.put("userId",userId);
+        bodyMap.put("id",id);
+        return bodyMap;
+
+
+    }
+
 
 
 }
